@@ -23,5 +23,12 @@ namespace Fantasia.Desktop
             App.Current.MainWindow = (Window)Shell;
             App.Current.MainWindow.Show();
         }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            base.ConfigureModuleCatalog();
+            var moduleCatalog = this.ModuleCatalog as ModuleCatalog;
+            moduleCatalog.AddModule(typeof(AlmacenModule.AlmacenModule));
+        }
     }
 }
