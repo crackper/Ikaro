@@ -7,11 +7,11 @@ using System.Windows;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Fantasi.Desktop")]
+[assembly: AssemblyTitle("Fantasia.Desktop")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Toshiba")]
-[assembly: AssemblyProduct("Fantasi.Desktop")]
+[assembly: AssemblyProduct("Fantasia.Desktop")]
 [assembly: AssemblyCopyright("Copyright © Toshiba 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
