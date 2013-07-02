@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Fantasia.Desktop
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para Shell.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Shell : Window
     {
-        public MainWindow()
+        public Shell()
         {
             InitializeComponent();
         }

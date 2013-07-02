@@ -1,8 +1,9 @@
-﻿<Window x:Class="Fantasia.Desktop.MainWindow"
+﻿<Window x:Class="Fantasia.Desktop.Shell"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://www.codeplex.com/prism"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" />
     </Grid>
 </Window>
