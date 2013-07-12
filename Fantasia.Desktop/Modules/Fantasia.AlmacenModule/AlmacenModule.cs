@@ -10,6 +10,7 @@ using Fantasia.AlmacenModule.Views;
 
 namespace Fantasia.AlmacenModule
 {
+    [Module(ModuleName = "AlmacenModule")]
     public class AlmacenModule:IModule
     {
         IUnityContainer _container;

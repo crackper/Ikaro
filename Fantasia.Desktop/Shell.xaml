@@ -3,7 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/prism"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" />
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top">
+            <Menu  >
+                <MenuItem Header="_Archivo">
+                </MenuItem>
+                <MenuItem Header="A_lmacen">
+                    <MenuItem Header="_Productos" Cursor="Hand" ToolTip="Productos">
+                        <MenuItem.Icon>
+                            <Image Source="/Fantasia.AlmacenModule;component/Images/product24x24.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="ToolbarRegion"></ContentControl>
+            <ToolBarPanel>
+                <ToolBarTray>
+                    <ToolBar Band="1" BandIndex="1">
+                        <Button>Gurdar </Button>
+                    </ToolBar>
+                </ToolBarTray>
+            </ToolBarPanel>      
+        </StackPanel>
+        <StatusBar DockPanel.Dock="Bottom" />
+        <TabControl ItemContainerStyle="{StaticResource TabHeaderStyle}" Name="MainRegion" prism:RegionManager.RegionName="MainRegion"/>
+    </DockPanel>
 </Window>

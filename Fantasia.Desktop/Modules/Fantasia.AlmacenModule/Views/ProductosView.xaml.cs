@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Fantasia.AlmacenModule.ViewModels;
 
 namespace Fantasia.AlmacenModule.Views
 {
@@ -20,9 +21,10 @@ namespace Fantasia.AlmacenModule.Views
     /// </summary>
     public partial class ProductosView : UserControl
     {
-        public ProductosView()
+        public ProductosView(ProductosViewModel viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }
