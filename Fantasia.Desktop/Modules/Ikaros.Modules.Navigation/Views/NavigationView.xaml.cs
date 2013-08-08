@@ -12,18 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Ikaros.AlmacenModule.ViewModels;
+//importamos
+using Ikaros.Modules.Navigation.ViewModels;
 
-namespace Ikaros.AlmacenModule.Views
+namespace Ikaros.Modules.Navigation.Views
 {
     /// <summary>
-    /// Lógica de interacción para ProductosView.xaml
+    /// Lógica de interacción para NavigationView.xaml
     /// </summary>
-    public partial class ProductosView : UserControl
+    public partial class NavigationView : UserControl
     {
-        public ProductosView(ProductosViewModel viewModel)
+        public NavigationView(NavigationViewModel viewModel)
         {
             InitializeComponent();
+
             this.DataContext = viewModel;
         }
     }

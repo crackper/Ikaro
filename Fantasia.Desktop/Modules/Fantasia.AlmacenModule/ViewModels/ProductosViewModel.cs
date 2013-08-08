@@ -8,9 +8,9 @@ using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Prism.Commands;
 using System.Windows.Input;
 using Microsoft.Practices.Unity;
-using Fantasia.AlmacenModule.Views;
+using Ikaros.AlmacenModule.Views;
 
-namespace Fantasia.AlmacenModule.ViewModels
+namespace Ikaros.AlmacenModule.ViewModels
 {
     public class ProductosViewModel
     {
@@ -23,7 +23,7 @@ namespace Fantasia.AlmacenModule.ViewModels
             _regionManager = regionManager;
 
             ViewName = "Productos";
-            ImageUri = "/Fantasia.AlmacenModule;component/Images/product24x24.png";
+            ImageUri = "/Ikaros.AlmacenModule;component/Images/product24x24.png";
 
             CloseCommand = new DelegateCommand(Close);
         }

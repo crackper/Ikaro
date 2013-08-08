@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Desktop", "Fantasia.Desktop\Ikaros.Desktop.csproj", "{4F13F9DF-D617-4695-A3F7-AD152ED2816A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.AlmacenModule", "Fantasia.Desktop\Modules\Fantasia.AlmacenModule\Ikaros.AlmacenModule.csproj", "{235FC058-D601-421A-BB6D-3D6F150BD7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Infrastructure", "Fantasia.Desktop\Modules\Ikaros.Infrastructure\Ikaros.Infrastructure.csproj", "{95B8FE64-C314-4B6D-9796-3B0F80D184D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Modules.Navigation", "Fantasia.Desktop\Modules\Ikaros.Modules.Navigation\Ikaros.Modules.Navigation.csproj", "{75D26118-F9B6-42FA-B90E-FECEF0F4822F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F13F9DF-D617-4695-A3F7-AD152ED2816A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F13F9DF-D617-4695-A3F7-AD152ED2816A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F13F9DF-D617-4695-A3F7-AD152ED2816A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F13F9DF-D617-4695-A3F7-AD152ED2816A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B8FE64-C314-4B6D-9796-3B0F80D184D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B8FE64-C314-4B6D-9796-3B0F80D184D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B8FE64-C314-4B6D-9796-3B0F80D184D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B8FE64-C314-4B6D-9796-3B0F80D184D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
