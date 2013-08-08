@@ -7,9 +7,9 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
-                                Path=Content.DataContext.ImageUri}" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                Path=Content.DataContext.ImageUri}" Width="18" Height="18" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                         <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
-                                Path=Content.DataContext.ViewName}" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+                                Path=Content.DataContext.ViewName}" VerticalAlignment="Center" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center"/>
                         <Button VerticalAlignment="Center" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
                                 Path=Content.DataContext.CloseCommand}" Style="{DynamicResource MenuButtonStyle}" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Center" ToolTip="Cerrar">x</Button>
                     </StackPanel>

@@ -4,6 +4,8 @@
         xmlns:prism="http://www.codeplex.com/prism"
         xmlns:local="clr-namespace:Ikaros.Desktop.Properties"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Ikaros.Desktop.Shell"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:lib="clr-namespace:PixelLab.Wpf.Transitions;assembly=PixelLab.Wpf"
         Title="Ikaros Retail" MinHeight="768" MinWidth="1024"
         Height="768" 
         Width="1024"
@@ -35,20 +37,25 @@
             </ToolBarPanel>
         </StackPanel>
         <!-- Navigation Region -->
-        <Border Margin="8,2" DockPanel.Dock="Left" BorderBrush="#AAAAAA" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" Background="{DynamicResource ShadeBrush}"  Width="225">
-            <ContentControl x:Name="NavigationRegion" prism:RegionManager.RegionName="NavigationRegion"
-        		            VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
-            <!--Visibility="{Binding NavigationPaneVisibility}"-->
+        <Border Margin="8,2,0,2" DockPanel.Dock="Left" BorderBrush="#AAAAAA" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" Background="{DynamicResource ShadeBrush}"  Width="225">
+            <ContentControl x:Name="NavigationRegion" 
+                            prism:RegionManager.RegionName="NavigationRegion"
+        		            VerticalContentAlignment="Stretch" 
+                            HorizontalContentAlignment="Stretch"/>
         </Border>
-        <StatusBar DockPanel.Dock="Bottom">
-            <Border BorderThickness="0,1,0,0" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,5,0,0" BorderBrush="#AAAAAA" Background="{DynamicResource ShadeBrush}">
+        <StatusBar DockPanel.Dock="Bottom" >
+            <Border  BorderThickness="0,1,0,0" Margin="0,5,0,0" BorderBrush="#AAAAAA" Background="{DynamicResource ShadeBrush}">
                 <Grid>
                     <TextBlock Text="{Binding Version}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}" Margin="5,0,0,0" />
                     <TextBlock Text="{Binding CurrentUsuario.UserName}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}" Margin="0,0,5,0" />
                 </Grid>
             </Border>
         </StatusBar>
-        <!-- Content Region -->
-        <TabControl ItemContainerStyle="{StaticResource TabHeaderStyle}" x:Name="MainRegion" prism:RegionManager.RegionName="MainRegion"/>
+        <!-- Content Region -->       
+        <Border Margin="8,2,8,2" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" BorderBrush="#AAAAAA" Background="{DynamicResource ShadeBrush}">
+            <Grid>
+                <TabControl ItemContainerStyle="{StaticResource TabHeaderStyle}" x:Name="MainRegion" prism:RegionManager.RegionName="MainRegion"/>
+            </Grid>
+        </Border>
     </DockPanel>
 </Window>

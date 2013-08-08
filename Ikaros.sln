@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Infrastructure", "Fa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Modules.Navigation", "Fantasia.Desktop\Modules\Ikaros.Modules.Navigation\Ikaros.Modules.Navigation.csproj", "{75D26118-F9B6-42FA-B90E-FECEF0F4822F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Modules.Almacen", "Fantasia.Desktop\Modules\Ikaros.Modules.Almacen\Ikaros.Modules.Almacen.csproj", "{DAB9A24C-B298-468A-AABF-40740572BA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E7EBA1E8-8234-4162-A19A-6F0D001B90B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,9 +35,19 @@ Global
 		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75D26118-F9B6-42FA-B90E-FECEF0F4822F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB9A24C-B298-468A-AABF-40740572BA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB9A24C-B298-468A-AABF-40740572BA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB9A24C-B298-468A-AABF-40740572BA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB9A24C-B298-468A-AABF-40740572BA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{95B8FE64-C314-4B6D-9796-3B0F80D184D4} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{DAB9A24C-B298-468A-AABF-40740572BA18} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{75D26118-F9B6-42FA-B90E-FECEF0F4822F} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

@@ -37,6 +37,9 @@ namespace Ikaros.Modules.Navigation
             //
             _regionManager.Regions["NavigationRegion"].Add(view);
             _regionManager.Regions["NavigationRegion"].Activate(view);    
+
+            //_regionManager.RegisterViewWithRegion("NavigationRegion", typeof(NavigationView));
+            //_regionManager.RequestNavigate("NavigationRegion", "NavigationView");
         }
     }
 }

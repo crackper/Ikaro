@@ -30,8 +30,9 @@ namespace Ikaros.Desktop
         {
             var moduleCatalog = this.ModuleCatalog as ModuleCatalog;
 
-            moduleCatalog.AddModule(typeof(AlmacenModule.AlmacenModule));
-            moduleCatalog.AddModule(typeof(Ikaros.Modules.Navigation.NavigationModule));
+           // moduleCatalog.AddModule(typeof(AlmacenModule.AlmacenModule));
+            moduleCatalog.AddModule(typeof(Ikaros.Modules.Almacen.AlmacenModule));
+            moduleCatalog.AddModule(typeof(Ikaros.Modules.Navigation.NavigationModule));           
 
             base.ConfigureModuleCatalog();
         }
