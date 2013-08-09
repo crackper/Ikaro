@@ -32,5 +32,22 @@ namespace Ikaros.Desktop
             _navigationService = navigationService;
             this.DataContext = viewModel;
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.F5)
+            {
+                if (WindowStyle == System.Windows.WindowStyle.None)
+                {
+                    WindowState = System.Windows.WindowState.Normal;
+                    WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                }
+                else
+                {
+                    WindowState = System.Windows.WindowState.Maximized;
+                    WindowStyle = System.Windows.WindowStyle.None;
+                }
+            }
+        }
     }
 }

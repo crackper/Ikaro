@@ -1,17 +1,33 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
     
     <Style x:Key="TabHeaderStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
-                                Path=Content.DataContext.ImageUri}" Width="18" Height="18" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
-                                Path=Content.DataContext.ViewName}" VerticalAlignment="Center" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center"/>
+                                Path=Content.DataContext.ImageUri}" Width="18" Height="18" Margin="7,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, Path=Content.DataContext.ViewName}" 
+                                   VerticalAlignment="Center" 
+                                   Foreground="{DynamicResource TextBrush}"
+                                   FontWeight="Bold" 
+                                   FontSize="12" 
+                                   HorizontalAlignment="Center"/>
                         <Button VerticalAlignment="Center" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
                                 Path=Content.DataContext.CloseCommand}" Style="{DynamicResource MenuButtonStyle}" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Center" ToolTip="Cerrar">x</Button>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
+                                                                Path=Content.DataContext.SelectViewCommand}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="TouchUp">
+                                <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
+                                                                Path=Content.DataContext.SelectViewCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </StackPanel>
                 </DataTemplate>
             </Setter.Value>
@@ -124,6 +140,13 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
+    <Style x:Key="{x:Type GridViewColumnHeader}" TargetType="GridViewColumnHeader">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="FontWeight" Value="Bold"/>
+     </Style>
 
     <!--Style x:Key="{x:Type GridViewColumnHeader}" TargetType="GridViewColumnHeader">
         <Setter Property="HorizontalContentAlignment" Value="Center"/>

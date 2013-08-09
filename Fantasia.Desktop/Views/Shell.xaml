@@ -5,6 +5,7 @@
         xmlns:local="clr-namespace:Ikaros.Desktop.Properties"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Ikaros.Desktop.Shell"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei ="http://schemas.microsoft.com/expression/2010/interactions"
         xmlns:lib="clr-namespace:PixelLab.Wpf.Transitions;assembly=PixelLab.Wpf"
         Title="Ikaros Retail" MinHeight="768" MinWidth="1024"
         Height="768" 
@@ -13,7 +14,7 @@
         Top="100"
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow"
-        Icon="../Images/Ikaro.ico"
+        Icon="../Images/Ikaro.ico" KeyDown="Window_KeyDown"
         >
     <DockPanel LastChildFill="True">
         <StackPanel DockPanel.Dock="Top">
@@ -54,7 +55,7 @@
         <!-- Content Region -->       
         <Border Margin="8,2,8,2" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" BorderBrush="#AAAAAA" Background="{DynamicResource ShadeBrush}">
             <Grid>
-                <TabControl ItemContainerStyle="{StaticResource TabHeaderStyle}" x:Name="MainRegion" prism:RegionManager.RegionName="MainRegion"/>
+                <TabControl ItemContainerStyle="{StaticResource TabHeaderStyle}" x:Name="MainRegion" prism:RegionManager.RegionName="MainRegion"/>                   
             </Grid>
         </Border>
     </DockPanel>

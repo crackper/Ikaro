@@ -18,7 +18,7 @@
             <!--ItemContainerStyle="{DynamicResource ListViewItemContainerStyle}"-->
             <ListView.View>
                 <GridView x:Name="gvClientes">
-                    <GridViewColumn Header="Codigo" Width="auto"/>
+                    <GridViewColumn Header="Codigo" Width="120"/>
                     <GridViewColumn Header="Descripcion"  Width="auto"/>
                     <GridViewColumn Header="Talla"  Width="auto"/>
                     <GridViewColumn Header="Stock"  Width="auto"/>

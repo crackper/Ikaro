@@ -35,6 +35,7 @@ namespace Ikaros.Modules.Almacen.ViewModels
             ImageUri = "\\Images\\almacen24x24.png";
 
             CloseCommand = new DelegateCommand(Close);
+            SelectViewCommand = new DelegateCommand(SelectView);
 
             Actions.Add(new AdministrationActionViewModel()
             {
@@ -60,6 +61,7 @@ namespace Ikaros.Modules.Almacen.ViewModels
         public String ViewName { get; set; }
         public String ImageUri { get; set; }
         public ICommand CloseCommand { get; set; }
+        public ICommand SelectViewCommand { get; set; }
 
         private void Close()
         {
@@ -71,6 +73,11 @@ namespace Ikaros.Modules.Almacen.ViewModels
                 region.Deactivate(view);
                 region.Remove(view);
             }
+        }
+
+        public void SelectView()
+        {
+            System.Windows.MessageBox.Show("Seleccionaste la vista");
         }
 
         private void AddViewtoMainRegion(UserControl view)

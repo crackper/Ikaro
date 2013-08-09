@@ -21,7 +21,7 @@
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextBrush}" Margin="4.5,7.5,0,2.5" />
+                            <TextBlock Text="{Binding Name}" Foreground="{DynamicResource TextBrush}" FontWeight="Bold" Margin="4.5,7.5,0,2.5" />
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
