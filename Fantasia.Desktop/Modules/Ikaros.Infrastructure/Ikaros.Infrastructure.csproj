@@ -71,6 +71,9 @@
     <Compile Include="Navigation\NavigateEvent.cs" />
     <Compile Include="Navigation\NavigationPoint.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="Toolbar\IToolbarService.cs" />
+    <Compile Include="Toolbar\ToolbarEvent.cs" />
+    <Compile Include="Toolbar\ToolbarItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +88,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SingleInstance.cs" />
+    <Compile Include="Toolbar\ToolbarService.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

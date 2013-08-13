@@ -198,6 +198,10 @@
       <Project>{75d26118-f9b6-42fa-b90e-fecef0f4822f}</Project>
       <Name>Ikaros.Modules.Navigation</Name>
     </ProjectReference>
+    <ProjectReference Include="Modules\Ikaros.Modules.Toolbar\Ikaros.Modules.Toolbar.csproj">
+      <Project>{8bbd20c3-8f70-4e8e-8a20-e73ecea69a4e}</Project>
+      <Name>Ikaros.Modules.Toolbar</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Barcode.png" />
@@ -229,6 +233,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\product32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\category32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search22_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

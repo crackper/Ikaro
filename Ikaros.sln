@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Modules.Almacen", "F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E7EBA1E8-8234-4162-A19A-6F0D001B90B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ikaros.Modules.Toolbar", "Fantasia.Desktop\Modules\Ikaros.Modules.Toolbar\Ikaros.Modules.Toolbar.csproj", "{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,15 +41,20 @@ Global
 		{DAB9A24C-B298-468A-AABF-40740572BA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAB9A24C-B298-468A-AABF-40740572BA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAB9A24C-B298-468A-AABF-40740572BA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{235FC058-D601-421A-BB6D-3D6F150BD7AE} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
 		{95B8FE64-C314-4B6D-9796-3B0F80D184D4} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
-		{DAB9A24C-B298-468A-AABF-40740572BA18} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
 		{75D26118-F9B6-42FA-B90E-FECEF0F4822F} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{DAB9A24C-B298-468A-AABF-40740572BA18} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{235FC058-D601-421A-BB6D-3D6F150BD7AE} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
+		{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E} = {E7EBA1E8-8234-4162-A19A-6F0D001B90B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

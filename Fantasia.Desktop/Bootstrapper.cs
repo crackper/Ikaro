@@ -8,6 +8,7 @@ using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
 using Ikaros.Infrastructure.Navigation;
+using Ikaros.Infrastructure.Toolbar;
 
 namespace Ikaros.Desktop
 {
@@ -32,7 +33,8 @@ namespace Ikaros.Desktop
 
            // moduleCatalog.AddModule(typeof(AlmacenModule.AlmacenModule));
             moduleCatalog.AddModule(typeof(Ikaros.Modules.Almacen.AlmacenModule));
-            moduleCatalog.AddModule(typeof(Ikaros.Modules.Navigation.NavigationModule));           
+            moduleCatalog.AddModule(typeof(Ikaros.Modules.Navigation.NavigationModule));
+            moduleCatalog.AddModule(typeof(Ikaros.Modules.Toolbar.ToolbarModule));
 
             base.ConfigureModuleCatalog();
         }
@@ -40,6 +42,7 @@ namespace Ikaros.Desktop
         protected override void ConfigureContainer()
         {
             RegisterTypeIfMissing(typeof(INavigationService), typeof(NavigationService), true);
+            RegisterTypeIfMissing(typeof(IToolbarService),typeof(ToolbarService),true);
 
             base.ConfigureContainer();
         }

@@ -28,15 +28,6 @@
                 </Grid>
             </Border>
             <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="ToolbarRegion"/>
-            <ToolBarPanel>
-                <ToolBarTray>
-                    <ToolBar Band="1" BandIndex="1">
-                        <Button Content="Nuevo"/>
-                        <Button Content="Guardar"/>
-                        <Button Content="Cerrar"/>
-                    </ToolBar>
-                </ToolBarTray>
-            </ToolBarPanel>
         </StackPanel>
         <!-- Navigation Region -->
         <Border Margin="8,2,0,2" DockPanel.Dock="Left" BorderBrush="#AAAAAA" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" Background="{DynamicResource ShadeBrush}"  Width="225">

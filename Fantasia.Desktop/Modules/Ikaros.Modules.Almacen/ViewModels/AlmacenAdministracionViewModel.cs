@@ -18,6 +18,9 @@ using Ikaros.Infrastructure.Administration;
 using Ikaros.Modules.Almacen.Views;
 using System.Windows.Threading;
 using System.Windows.Controls;
+using Microsoft.Practices.Prism.Events;
+using Ikaros.Infrastructure.Toolbar;
+
 
 namespace Ikaros.Modules.Almacen.ViewModels
 {
@@ -25,11 +28,15 @@ namespace Ikaros.Modules.Almacen.ViewModels
     {
         private IUnityContainer _container;
         private IRegionManager _regionManager;
+        private readonly IEventAggregator _eventAggregator;
+        private readonly IToolbarService _toolbarService;
 
-        public AlmacenAdministracionViewModel(IUnityContainer container, IRegionManager regionManager)
+        public AlmacenAdministracionViewModel(IUnityContainer container, IRegionManager regionManager,IToolbarService toolbarService, IEventAggregator eventAggregator)
         {
             _container = container;
             _regionManager = regionManager;
+            _toolbarService = toolbarService;
+            _eventAggregator = eventAggregator;
 
             ViewName = "Almacen .::. Administracion";
             ImageUri = "\\Images\\almacen24x24.png";
@@ -45,7 +52,7 @@ namespace Ikaros.Modules.Almacen.ViewModels
                     Dispatcher.CurrentDispatcher.BeginInvoke((Action)delegate 
                         {
                            var _view = _container.Resolve<ProductosView>();
-                            _view.DataContext = new ProductosViewModel(container, regionManager);//_container.Resolve<ProductosViewModel>(); //
+                            _view.DataContext = new ProductosViewModel(container, regionManager,toolbarService,eventAggregator);//_container.Resolve<ProductosViewModel>(); //
 
                             AddViewtoMainRegion(_view);        
                            
@@ -55,6 +62,27 @@ namespace Ikaros.Modules.Almacen.ViewModels
                 Category = "Mantenimientos",
                 Title = "Productos",
                 Icon = "\\Images\\product32x32.png"
+            });
+
+            Actions.Add(new AdministrationActionViewModel()
+            {
+                Action = (p) =>
+                {
+                    IsBusy = true;
+
+                    Dispatcher.CurrentDispatcher.BeginInvoke((Action)delegate
+                    {
+                        var _view = _container.Resolve<CategoriasView>();
+                        _view.DataContext = new CategoriasViewModel(container, regionManager);
+
+                        AddViewtoMainRegion(_view);
+
+                        IsBusy = false;
+                    }, DispatcherPriority.Background);
+                },
+                Category = "Mantenimientos",
+                Title = "Categorias",
+                Icon = "\\Images\\category32x32.png"
             });
         }
 

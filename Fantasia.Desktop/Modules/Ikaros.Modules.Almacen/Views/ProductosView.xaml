@@ -7,11 +7,16 @@
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
     <DockPanel LastChildFill="True" >
-        <Border DockPanel.Dock="Top" Margin="0,0,0,2" Background="LightYellow" Padding="1" BorderBrush="SteelBlue" BorderThickness="1" CornerRadius="3" VerticalAlignment="Top">
+            <Border DockPanel.Dock="Top" Style="{DynamicResource BorderSearchStyle}">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Margin="5" FontWeight="Bold">Criterio:</TextBlock>
                 <TextBox Name="txtCriterio" FontWeight="Bold"  Margin="10,0,0,0" Width="300"/>
-                <Button Name="Buscar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="80">Buscar</Button>
+                <Button Name="Buscar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="85">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="/Images/search32x32.png" Width="16" Height="16"/>
+                            <TextBlock Text="Buscar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
             </StackPanel>
         </Border>
         <ListView Name="lvProductos">

@@ -870,7 +870,7 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}" />
         <Setter Property="BorderThickness" Value="1,1.5,0.5,0.5" />
-        <Setter Property="Padding" Value="1" />
+        <Setter Property="Padding" Value="2" />
         <Setter Property="AllowDrop" Value="true" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="MinWidth" Value="0" />

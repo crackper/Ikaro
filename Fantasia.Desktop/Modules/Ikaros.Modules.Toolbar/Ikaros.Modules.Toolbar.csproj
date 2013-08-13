@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAB9A24C-B298-468A-AABF-40740572BA18}</ProjectGuid>
+    <ProjectGuid>{8BBD20C3-8F70-4E8E-8A20-E73ECEA69A4E}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ikaros.Modules.Almacen</RootNamespace>
-    <AssemblyName>Ikaros.Modules.Almacen</AssemblyName>
+    <RootNamespace>Ikaros.Modules.Toolbar</RootNamespace>
+    <AssemblyName>Ikaros.Modules.Toolbar</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -72,7 +72,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlmacenModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,17 +85,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ViewModels\AlmacenAdministracionViewModel.cs" />
-    <Compile Include="ViewModels\CategoriasViewModel.cs" />
-    <Compile Include="ViewModels\ProductosViewModel.cs" />
-    <Compile Include="Views\AlmacenView_Administracion.xaml.cs">
-      <DependentUpon>AlmacenView_Administracion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CategoriasView.xaml.cs">
-      <DependentUpon>CategoriasView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProductosView.xaml.cs">
-      <DependentUpon>ProductosView.xaml</DependentUpon>
+    <Compile Include="ToolbarModule.cs" />
+    <Compile Include="ViewModels\ToolbarItemViewModel.cs" />
+    <Compile Include="ViewModels\ToolbarViewModel.cs" />
+    <Compile Include="Views\ToolbarView.xaml.cs">
+      <DependentUpon>ToolbarView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,21 +107,9 @@
       <Project>{95b8fe64-c314-4b6d-9796-3b0f80d184d4}</Project>
       <Name>Ikaros.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ikaros.Modules.Toolbar\Ikaros.Modules.Toolbar.csproj">
-      <Project>{8bbd20c3-8f70-4e8e-8a20-e73ecea69a4e}</Project>
-      <Name>Ikaros.Modules.Toolbar</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\AlmacenView_Administracion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CategoriasView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProductosView.xaml">
+    <Page Include="Views\ToolbarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

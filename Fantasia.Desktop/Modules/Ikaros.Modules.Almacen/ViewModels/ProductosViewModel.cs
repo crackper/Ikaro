@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Events;
 using System.Windows.Input;
 using Microsoft.Practices.Unity;
 using Ikaros.Modules.Almacen.Views;
+using Ikaros.Infrastructure.Toolbar;
+using Ikaros.Modules.Toolbar.Views;
+using Ikaros.Modules.Toolbar.ViewModels;
 
 namespace Ikaros.Modules.Almacen.ViewModels
 {
@@ -16,24 +20,50 @@ namespace Ikaros.Modules.Almacen.ViewModels
     {
         private IUnityContainer _container;
         private IRegionManager _regionManager;
+        private IToolbarService _toolbarService;
+        private readonly IEventAggregator _eventAggregator;
 
-        public ProductosViewModel(IUnityContainer container, IRegionManager regionManager)
+        public ProductosViewModel(IUnityContainer container, IRegionManager regionManager, IToolbarService toolbarService,IEventAggregator eventAggregator)
         {
             _container = container;
             _regionManager = regionManager;
+            _toolbarService = toolbarService;
+            _eventAggregator = eventAggregator;
 
             ViewName = "Productos";
             ImageUri = "\\Images\\product32x32.png";
 
             CloseCommand = new DelegateCommand(Close);
-            SelectTabCommand = new DelegateCommand(SelectTab);
+            SelectViewCommand = new DelegateCommand(SelectView);
+
+            _toolbarService.RegistrarToolbarItem(new ToolbarItem() { 
+                Nombre = "Guardar",
+                ViewName = ViewName,
+                Icon = ImageUri
+            });
+
+            _eventAggregator.GetEvent<ToolbarEvent>().Subscribe(Item, true);
+
+
+            var view = _container.Resolve<ToolbarView>();
+            var viewModel = _container.Resolve<ToolbarViewModel>();
+
+            view.DataContext = viewModel;
+
+            _regionManager.Regions["ToolbarRegion"].Add(view);
+            _regionManager.Regions["ToolbarRegion"].Activate(view);  
+        }
+
+        private void Item(ToolbarItem item)
+        {
+            System.Windows.MessageBox.Show("Guardar");
         }
 
         public String ViewName { get; set; }
         public String ImageUri { get; set; }
 
         public ICommand CloseCommand { get; set; }
-        public ICommand SelectTabCommand { get; set; }
+        public ICommand SelectViewCommand { get; set; }
 
         private void Close()
         {
@@ -48,9 +78,10 @@ namespace Ikaros.Modules.Almacen.ViewModels
             }
         }
 
-        public void SelectTab()
+        public void SelectView()
         {
-            ViewName = "Seleeeeeee";
+            System.Windows.MessageBox.Show("Seleccionaste la vista");
+            _regionManager.RequestNavigate("ToolbarRegion", "ToolbarView");
         }
     }
 }
