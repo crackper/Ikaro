@@ -7,19 +7,47 @@
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
     <DockPanel LastChildFill="True" >
-            <Border DockPanel.Dock="Top" Style="{DynamicResource BorderSearchStyle}">
+        <Border DockPanel.Dock="Top" Style="{DynamicResource BorderSearchStyle}">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Margin="5" FontWeight="Bold">Criterio:</TextBlock>
                 <TextBox Name="txtCriterio" FontWeight="Bold"  Margin="10,0,0,0" Width="300"/>
                 <Button Name="Buscar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="85">
-                        <StackPanel Orientation="Horizontal">
-                            <Image  Source="/Images/search32x32.png" Width="16" Height="16"/>
-                            <TextBlock Text="Buscar" Margin="5,0,0,0" VerticalAlignment="Center" />
-                        </StackPanel>
-                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/search32x32.png" Width="16" Height="16"/>
+                        <TextBlock Text="Buscar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </Border>
-        <ListView Name="lvProductos">
+        <Border DockPanel.Dock="Bottom" Style="{DynamicResource BorderToolbarStyle}" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bntNuevo" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="100" Height="30" ToolTip="Catalogar Nuevo Producto" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/new32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Catalogar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                </Button>
+                 <Button Name="bntEditar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/edit32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Editar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                 </Button>
+                    <Button Name="bntEliminar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="/Images/delete32x32.png" Width="20" Height="20"/>
+                            <TextBlock Text="Eliminar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button Name="bntCerrar" FontWeight="Bold" Command="{Binding CloseCommand}" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="/Images/close32x32.png" Width="20" Height="20"/>
+                            <TextBlock Text="Cerrar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+       </Border>   
+       <ListView Name="lvProductos">
             <!--ItemContainerStyle="{DynamicResource ListViewItemContainerStyle}"-->
             <ListView.View>
                 <GridView x:Name="gvClientes">

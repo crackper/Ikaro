@@ -18,6 +18,34 @@
                 </Button>
             </StackPanel>
         </Border>
+        <Border DockPanel.Dock="Bottom" Style="{DynamicResource BorderToolbarStyle}" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="bntNuevo" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="135" Height="30" ToolTip="Catalogar Nuevo Producto" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/new32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Registrar Nuevo" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Name="bntEditar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/edit32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Editar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Name="bntEliminar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/delete32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Eliminar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Name="bntCerrar" FontWeight="Bold" Command="{Binding CloseCommand}" Padding="3" Margin="10,0,0,0" Width="90" Height="30">
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/close32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="Cerrar" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
         <ListView Name="lvProductos">
             <!--ItemContainerStyle="{DynamicResource ListViewItemContainerStyle}"-->
             <ListView.View>

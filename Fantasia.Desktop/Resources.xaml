@@ -17,7 +17,16 @@
                                    FontSize="12" 
                                    HorizontalAlignment="Center"/>
                         <Button VerticalAlignment="Center" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
-                                Path=Content.DataContext.CloseCommand}" Style="{DynamicResource MenuButtonStyle}" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Center" ToolTip="Cerrar">x</Button>
+                                Path=Content.DataContext.CloseCommand}" Style="{DynamicResource MenuButtonStyle}" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Center" Content="x">
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image  Source="/Images/close32x32.png" Width="20" Height="20"/>
+                                        <TextBlock Text="Cerrar Vista" Margin="5,0,0,0" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </ToolTip>
+                            </Button.ToolTip>
+                        </Button>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseLeftButtonDown">
                                 <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, 
@@ -156,6 +165,31 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="2"/>
     </Style>
+
+    <Style x:Key="BorderToolbarStyle" TargetType="Border">
+        <Setter Property="Margin" Value="0,2,0,2"/>
+        <Setter Property="Background" Value="LightYellow"/>
+        <Setter Property="Padding" Value="5,8"/>
+        <Setter Property="BorderBrush" Value="#FFE0E3BC"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="2"/>
+    </Style>
+    
+    <!--Style x:Key="SarchButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="/Images/search32x32.png" Width="20" Height="20"/>
+                        <TextBlock Text="{TemplateBinding Button.Content }" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style-->
 
     <!--Style x:Key="{x:Type GridViewColumnHeader}" TargetType="GridViewColumnHeader">
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
