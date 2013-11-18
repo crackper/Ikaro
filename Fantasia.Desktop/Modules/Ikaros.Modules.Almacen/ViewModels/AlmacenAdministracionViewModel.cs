@@ -18,8 +18,7 @@ using Ikaros.Infrastructure.Administration;
 using Ikaros.Modules.Almacen.Views;
 using System.Windows.Threading;
 using System.Windows.Controls;
-using Microsoft.Practices.Prism.Events;
-
+using Ikaro.Service;
 
 namespace Ikaros.Modules.Almacen.ViewModels
 {
@@ -27,8 +26,10 @@ namespace Ikaros.Modules.Almacen.ViewModels
     {
         private IUnityContainer _container;
         private IRegionManager _regionManager;
+        private IProductoService _productoService;
+        
 
-        public AlmacenAdministracionViewModel(IUnityContainer container, IRegionManager regionManager)
+        public AlmacenAdministracionViewModel(IUnityContainer container, IRegionManager regionManager,IProductoService productoService)
         {
             _container = container;
             _regionManager = regionManager;
@@ -47,7 +48,7 @@ namespace Ikaros.Modules.Almacen.ViewModels
                     Dispatcher.CurrentDispatcher.BeginInvoke((Action)delegate 
                         {
                            var _view = _container.Resolve<ProductosView>();
-                            _view.DataContext = new ProductosViewModel(container, regionManager);//_container.Resolve<ProductosViewModel>(); //
+                            _view.DataContext = new ProductosViewModel(container, regionManager,productoService);//_container.Resolve<ProductosViewModel>(); //
 
                             AddViewtoMainRegion(_view);        
                            

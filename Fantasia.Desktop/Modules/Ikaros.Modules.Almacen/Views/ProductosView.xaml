@@ -10,8 +10,8 @@
         <Border DockPanel.Dock="Top" Style="{DynamicResource BorderSearchStyle}">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Margin="5" FontWeight="Bold">Criterio:</TextBlock>
-                <TextBox Name="txtCriterio" FontWeight="Bold"  Margin="10,0,0,0" Width="300"/>
-                <Button Name="Buscar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="85">
+                <TextBox Name="txtCriterio" Text="{Binding Path=CriterioBusqueda}" FontWeight="Bold"  Margin="10,0,0,0" Width="300"/>
+                    <Button Name="Buscar" FontWeight="Bold" Padding="3" Margin="10,0,0,0" Width="85" Command="{Binding BuscarCommand}">
                     <StackPanel Orientation="Horizontal">
                         <Image  Source="/Images/search32x32.png" Width="16" Height="16"/>
                         <TextBlock Text="Buscar" Margin="5,0,0,0" VerticalAlignment="Center" />
@@ -46,18 +46,18 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-       </Border>   
-       <ListView Name="lvProductos">
+       </Border>
+            <ListView Name="lvProductos" ItemsSource="{Binding Path=Productos}">
             <!--ItemContainerStyle="{DynamicResource ListViewItemContainerStyle}"-->
             <ListView.View>
                 <GridView x:Name="gvClientes">
-                    <GridViewColumn Header="Codigo" Width="120"/>
-                    <GridViewColumn Header="Descripcion"  Width="auto"/>
-                    <GridViewColumn Header="Talla"  Width="auto"/>
-                    <GridViewColumn Header="Stock"  Width="auto"/>
-                    <GridViewColumn Header="Categoria"  Width="auto"/>
-                    <GridViewColumn Header="Precio"  Width="auto"/>
-                </GridView>
+                    <GridViewColumn Header="Codigo" DisplayMemberBinding="{Binding Path=Codigo}" Width="120"/>
+                    <GridViewColumn Header="Descripcion" DisplayMemberBinding="{Binding Path=Descripcion}"  Width="auto"/>
+                    <GridViewColumn Header="Categoria" DisplayMemberBinding="{Binding Path=Categoria.descripcion}" Width="auto"/>
+                    <GridViewColumn Header="Precio" DisplayMemberBinding="{Binding Path=Precio}"  Width="auto"/>
+                    <GridViewColumn Header="Stock" DisplayMemberBinding="{Binding Path=Stock}" Width="auto"/>
+                    <GridViewColumn Header="Descontinuado" DisplayMemberBinding="{Binding Path=Descontinuado}" Width="auto"/>
+                 </GridView>
             </ListView.View>
         </ListView>
     </DockPanel>

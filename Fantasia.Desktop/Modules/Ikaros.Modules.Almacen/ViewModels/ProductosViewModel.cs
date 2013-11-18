@@ -11,24 +11,34 @@ using System.Windows.Input;
 using Microsoft.Practices.Unity;
 using Ikaros.Modules.Almacen.Views;
 using System.Windows;
+using System.Collections.ObjectModel;
+using Ikaro.Core.Domain;
+using Ikaro.Service;
 
 namespace Ikaros.Modules.Almacen.ViewModels
 {
-    public class ProductosViewModel
+    public class ProductosViewModel:NotificationObject
     {
         private IUnityContainer _container;
         private IRegionManager _regionManager;
+        private IProductoService _productoService;
+        private ObservableCollection<Producto> _productos;
+        private string _criterioBusqueda = "";        
 
-        public ProductosViewModel(IUnityContainer container, IRegionManager regionManager)
+        public ProductosViewModel(IUnityContainer container, IRegionManager regionManager,IProductoService productoService )
         {
             _container = container;
             _regionManager = regionManager;
+            _productoService = productoService;
 
             ViewName = "Productos";
             ImageUri = "\\Images\\product32x32.png";
 
+            BuscarProductos();
+
             CloseCommand = new DelegateCommand(Close);
             SelectViewCommand = new DelegateCommand(SelectView);
+            BuscarCommand = new DelegateCommand(BuscarProductos);
         }
 
         public String ViewName { get; set; }
@@ -36,6 +46,25 @@ namespace Ikaros.Modules.Almacen.ViewModels
 
         public ICommand CloseCommand { get; set; }
         public ICommand SelectViewCommand { get; set; }
+        public ICommand BuscarCommand { get; set; }
+
+        public ObservableCollection<Producto> Productos
+        {
+            get { return _productos; }
+            set { _productos = value; }
+        }
+
+        public string CriterioBusqueda
+        {
+            get { return _criterioBusqueda; }
+            set { _criterioBusqueda = value; }
+        }
+
+        void BuscarProductos() 
+        {
+            _productos = new ObservableCollection<Producto>(_productoService.GetProductoByCriterio(CriterioBusqueda));
+            this.RaisePropertyChanged(()=>Productos);
+        }
 
         private void Close()
         {

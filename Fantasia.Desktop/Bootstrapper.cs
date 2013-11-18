@@ -7,6 +7,7 @@ using System.Windows;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 using Ikaros.Infrastructure.Navigation;
 using Ikaros.Infrastructure.Toolbar;
 
@@ -41,6 +42,8 @@ namespace Ikaros.Desktop
         {
             RegisterTypeIfMissing(typeof(INavigationService), typeof(NavigationService), true);
             RegisterTypeIfMissing(typeof(IToolbarService),typeof(ToolbarService),true);
+
+            Container.LoadConfiguration();
 
             base.ConfigureContainer();
         }
